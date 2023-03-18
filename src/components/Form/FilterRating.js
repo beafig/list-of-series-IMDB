@@ -1,4 +1,4 @@
-import '../../styles/layout/FilterTitle.scss'
+import '../../styles/layout/FilterRating.scss'
 
 function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) {
 
@@ -11,6 +11,7 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
       htmlFor="rating" className="form__label"
       key={eachRating} >
       <input
+        className='form__check'
         type="checkbox"
         name={eachRating}
         id='rating'
@@ -27,10 +28,11 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
       </legend>
       <label htmlFor="rating" className="form__label">
         <input type="checkbox" name="all"
+          className='form__check'
           id='rating'
           checked={searchRatingP1 === 'all'}
           onChange={handleClickRadio}
-        /> Todos
+        />Todos
       </label >
       {htmlRadio}
     </fieldset>

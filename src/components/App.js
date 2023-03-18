@@ -1,6 +1,5 @@
 /* SECCIÓN DE IMPORT: de React, componentes, SASS, imágenes*/
 
-
 import { Routes, Route } from 'react-router-dom';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';

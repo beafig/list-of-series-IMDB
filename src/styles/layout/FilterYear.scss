@@ -3,4 +3,12 @@
 .form__label {
   font-family: $roboto;
   color: white;
+  margin-bottom: 10px;
+}
+
+.form__option {
+  font-family: $roboto;
+  height: 25px;
+  border: none;
+  box-shadow: 5px 5px 2px #05275a;
 }

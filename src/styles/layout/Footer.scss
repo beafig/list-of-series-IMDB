@@ -1,0 +1,38 @@
+@import "../core/variables.scss";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $mainColor;
+  border-top: solid 2px $mainColor2;
+  width: 100%;
+  position: sticky;
+  bottom: 0px;
+  &__container {
+    display: flex;
+  }
+  &__text {
+    font-family: $roboto;
+    color: white;
+    margin-left: 15px;
+  }
+  &__copy {
+    color: white;
+    font-size: 14px;
+  }
+  &__img {
+    height: 100px;
+  }
+}
+
+.fa-github-alt,
+.fa-linkedin {
+  color: white;
+  margin-left: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(150%);
+  }
+}
