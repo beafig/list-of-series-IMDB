@@ -1,21 +1,21 @@
 @import "../core/variables.scss";
 
-.landing {
-  min-height: 65vh;
+.favSection {
   background: linear-gradient(#05275a, #6b71b9);
+  min-height: 65vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-family: $roboto;
-  &__text {
+  gap: 50px;
+  &__title {
+    font-family: $roboto;
     color: white;
     font-size: 30px;
-    margin-top: 30px;
   }
-  &__container {
-    margin-top: 50px;
-    display: flex;
-    gap: 25px;
+  &__img {
+    height: 300px;
+    margin-bottom: 50px;
   }
   &__btn {
     font-family: $roboto;
@@ -23,6 +23,9 @@
     color: $mainColor;
     padding: 15px;
     border-radius: 50%;
+    position: relative;
+    left: 550px;
+    top: 20px;
     cursor: pointer;
     &:hover {
       background-color: $mainColor;

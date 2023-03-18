@@ -8,6 +8,7 @@ import Landing from './Landing/Landing';
 import List from './List/List';
 import SerieDetail from './List/SerieDetail';
 import data from '../data/data.json'
+import Favourites from './Favourites/Favourites';
 
 
 /* SECCIÓN DEL COMPONENTE: variables de estado, efectos, funciones handler, funciones y variables para pintar el HTML y el HTML*/
@@ -37,6 +38,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Landing />} />
+        <Route path='/favourites' element={<Favourites />} />
         <Route path='/series/' element={<List cleanSeriesP={cleanSeries} />} />
         <Route path='/serie/:id' element={<SerieDetail findSerieP={findSerie} />} />
       </Routes>
