@@ -11,7 +11,7 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
       htmlFor="rating" className="form__label"
       key={eachRating} >
       <input
-        type="radio"
+        type="checkbox"
         name={eachRating}
         id='rating'
         onChange={handleClickRadio}
@@ -19,8 +19,6 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
       />{eachRating}
     </label >
   })
-  // const type = typeof (parseInt({ searchRatingP1 }))
-  // console.log(type);
 
   return (
     <fieldset>
@@ -28,7 +26,7 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
         Selecciona una puntuación:
       </legend>
       <label htmlFor="rating" className="form__label">
-        <input type="radio" name="all"
+        <input type="checkbox" name="all"
           id='rating'
           checked={searchRatingP1 === 'all'}
           onChange={handleClickRadio}
