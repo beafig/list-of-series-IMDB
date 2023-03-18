@@ -4,15 +4,14 @@ import { useState } from 'react';
 // import callToApi from '../../services/api';
 import EachSerie from './EachSerie';
 import Form from '../Form/Form';
-import data from '../../data/data.json'
-
 import '../../styles/layout/List.scss'
 
 
-function List() {
+
+function List({ cleanSeriesP }) {
 
   // ESTADOS DE REACT
-  const [allSeries] = useState(data)
+
   const [searchTitle, setSearchTitle] = useState('')
   const [searchYear, setSearchYear] = useState('all')
   const [searchRating, setSearchRating] = useState('all')
@@ -27,14 +26,6 @@ function List() {
   // }, [])
 
   // OBTENGO LOS DATOS DE UN FICHERO Y LOS LIMPIO
-  const cleanSeries = allSeries.map(eachSerie => ({
-    title: eachSerie.fullTitle,
-    actors: eachSerie.crew,
-    id: eachSerie.id,
-    image: eachSerie.image,
-    rating: eachSerie.imDbRating,
-    year: eachSerie.year,
-  }))
 
 
   // FUNCIÓN MANEJADORA DEL INPUT DE BUSCAR POR TÍTULO
@@ -54,7 +45,7 @@ function List() {
   }
 
   // FILTRO LAS SERIES POR TÍTULO
-  const filterSeries = cleanSeries
+  const filterSeries = cleanSeriesP
     .filter(eachSerie => {
       return eachSerie.title.toLocaleLowerCase().includes(searchTitle.toLocaleLowerCase())
     })
@@ -79,7 +70,7 @@ function List() {
   })
 
   // OBTENGO UN ARRAY CON LOS AÑOS DE TODAS LAS SERIES
-  const yearSerie = cleanSeries.map(eachSerie => {
+  const yearSerie = cleanSeriesP.map(eachSerie => {
     return eachSerie.year
   })
 
@@ -91,7 +82,7 @@ function List() {
     .sort((a, b) => b - a)
 
   //OBTENGO UN ARRAY CON TODAS LAS PUNTUACIONES y LO ORDENO CON .SORT()
-  const ratingSerie = cleanSeries
+  const ratingSerie = cleanSeriesP
     .map(eachSerie => {
       return Math.round(eachSerie.rating)
     })
@@ -102,6 +93,9 @@ function List() {
     .filter((item, index) => {
       return ratingSerie.indexOf(item) === index;
     })
+
+  //
+
 
   return (
     <>
@@ -123,6 +117,7 @@ function List() {
           {htmlSeries}
         </ul>
       </section>
+
     </>
   )
 }

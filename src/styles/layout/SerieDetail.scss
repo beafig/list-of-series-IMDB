@@ -1,15 +1,7 @@
 @import "../core/variables.scss";
-* {
-  text-decoration: none;
-}
-.mainSection {
-  // background-color: $mainColor;
+.detailSection {
   background: linear-gradient(#05275a, #6b71b9);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   min-height: 65vh;
-
   &__btn {
     margin: 15px;
     font-family: $roboto;
@@ -17,7 +9,7 @@
     color: $mainColor;
     padding: 15px;
     border-radius: 50%;
-    margin-left: 340%;
+    margin-left: 90%;
     cursor: pointer;
     border: solid 2px black;
     &:hover {
@@ -27,11 +19,24 @@
       transform: scale(120%);
     }
   }
-  &__list {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(5, 1fr);
-    margin: 15px 4%;
-    gap: 20px;
+}
+.detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    width: 300px;
+    align-self: center;
+  }
+  &__title,
+  &__actors,
+  &__rating {
+    color: white;
+    font-family: $roboto;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
   }
 }

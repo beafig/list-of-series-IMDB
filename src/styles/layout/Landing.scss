@@ -24,5 +24,11 @@
     padding: 15px;
     border-radius: 50%;
     cursor: pointer;
+    &:hover {
+      background-color: $mainColor;
+      color: white;
+      border: solid 2px white;
+      transform: scale(120%);
+    }
   }
 }
