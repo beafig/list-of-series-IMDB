@@ -14,6 +14,7 @@ function List() {
   const [allSeries] = useState(data)
   const [searchTitle, setSearchTitle] = useState('')
   const [searchYear, setSearchYear] = useState('all')
+  const [searchRating, setSearchRating] = useState('all')
 
   // OBTENGO LOS DATOS DE UN API
   // useEffect(() => {
@@ -45,6 +46,11 @@ function List() {
     setSearchYear(value)
   }
 
+  //FUNCIÓN MANEJADORA DEL RADIO DE BUSCAR POR PUNTUACIÓN
+  const handleClickRadioLift = (name) => {
+    setSearchRating(name)
+  }
+
   // FILTRO LAS SERIES POR TÍTULO
   const filterSeries = cleanSeries
     .filter(eachSerie => {
@@ -55,6 +61,13 @@ function List() {
         return true
       } else {
         return eachSerie.year === searchYear
+      }
+    })
+    .filter(eachSerie => {
+      if (searchRating === 'all') {
+        return true
+      } else {
+        return Math.round(eachSerie.rating) === parseInt(searchRating)
       }
     })
 
@@ -75,6 +88,19 @@ function List() {
     })
     .sort((a, b) => b - a)
 
+  //OBTENGO UN ARRAY CON TODAS LAS PUNTUACIONES y LO ORDENO CON .SORT()
+  const ratingSerie = cleanSeries
+    .map(eachSerie => {
+      return Math.round(eachSerie.rating)
+    })
+    .sort((a, b) => b - a)
+
+  //LIMPIO EL ARRAY DE PUNTUACIONES ELIMINANDO DUPLICADOS 
+  const cleanRating = ratingSerie
+    .filter((item, index) => {
+      return ratingSerie.indexOf(item) === index;
+    })
+
   return (
     <section className='mainSection'>
       <Link to='/' >
@@ -86,6 +112,9 @@ function List() {
         handleInputYearLift1={handleInputYearLift}
         cleanYearP={cleanYear}
         searchYearP={searchYear}
+        handleClickRadioLift1={handleClickRadioLift}
+        cleanRatingP={cleanRating}
+        searchRatingP={searchRating}
       />
       <ul className='mainSection__list'>
         {htmlSeries}

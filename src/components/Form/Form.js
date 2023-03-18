@@ -4,7 +4,7 @@ import FilterYear from './FilterYear';
 
 import '../../styles/layout/Form.scss'
 
-function Form({ handleInputTitleLift1, searchTitleP, cleanYearP, handleInputYearLift1, searchYearP }) {
+function Form({ handleInputTitleLift1, searchTitleP, cleanYearP, handleInputYearLift1, searchYearP, cleanRatingP, handleClickRadioLift1, searchRatingP }) {
 
   // FUNCIÓN PARA PREVENIR QUE LA PÁGINA SE REFRESQUE AL DARLE INTRO EN LOS INPUTS 
   const handleSubmit = (ev) => {
@@ -19,7 +19,10 @@ function Form({ handleInputTitleLift1, searchTitleP, cleanYearP, handleInputYear
         cleanYearP1={cleanYearP}
         handleInputYearLift2={handleInputYearLift1}
         searchYearP1={searchYearP} />
-      <FilterRating />
+      <FilterRating cleanRatingP1={cleanRatingP}
+        handleClickRadioLift2={handleClickRadioLift1}
+        searchRatingP1={searchRatingP}
+      />
     </form>
   )
 }
