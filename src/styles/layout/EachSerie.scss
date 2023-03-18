@@ -7,10 +7,12 @@
   justify-content: center;
   align-items: center;
   border: solid 2px white;
-  margin: 15px 15px 0 0;
+  border-radius: 5%;
+  background: linear-gradient(#05275a, #6b71b9);
+  // margin: 15px 15px 0 0;
   padding: 20px;
   height: 380px;
-  width: 80%;
+  width: 100%;
   text-align: center;
   &--title {
     color: white;
