@@ -1,0 +1,29 @@
+@import "../core/variables.scss";
+
+.mainSection__each {
+  font-family: $roboto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px white;
+  margin: 15px 15px 0 0;
+  padding: 20px;
+  height: 380px;
+  width: 80%;
+  text-align: center;
+  &--title {
+    color: white;
+  }
+  &--image {
+    width: 150px;
+    margin: 10px 0;
+  }
+  &--actors {
+    color: white;
+    margin-bottom: 10px;
+  }
+  &--rating {
+    color: white;
+  }
+}

@@ -1,0 +1,23 @@
+@import "../core/variables.scss";
+
+.mainSection {
+  background-color: $mainColor;
+  display: flex;
+  flex-direction: column;
+  &__btn {
+    margin: 15px;
+    font-family: $roboto;
+    font-size: 15px;
+    color: $mainColor;
+    padding: 15px;
+    border-radius: 50%;
+    position: relative;
+    left: 85%;
+  }
+  &__list {
+    align-self: center;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
