@@ -7,6 +7,8 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
   }
 
   const htmlRadio = cleanRatingP1.map(eachRating => {
+    console.log(eachRating);
+    console.log(searchRatingP1);
     return <label
       htmlFor="rating" className="form__label"
       key={eachRating} >
@@ -16,10 +18,11 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
         name='rating'
         id={eachRating}
         onChange={handleClickRadio}
-      // checked={parseInt({ searchRatingP1 }) === { eachRating }}
+        checked={searchRatingP1 === eachRating.toString()}
       />{eachRating}
     </label >
   })
+
 
   return (
     <fieldset>
@@ -31,7 +34,7 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
           className='form__check'
           id='all'
           name='rating'
-          // checked={searchRatingP1 === 'all'}
+          checked={searchRatingP1 === 'all'}
           onChange={handleClickRadio}
         />Todos
       </label >
