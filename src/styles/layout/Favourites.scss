@@ -2,20 +2,30 @@
 
 .favSection {
   background: linear-gradient(#05275a, #6b71b9);
-  min-height: 65vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 50px;
+  @media (min-width: 700px) {
+    min-height: 65vh;
+  }
   &__title {
     font-family: $roboto;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
+    @media (min-width: 700px) {
+      font-size: 30px;
+    }
   }
   &__img {
-    height: 300px;
-    margin-bottom: 50px;
+    height: 150px;
+    margin-bottom: 40px;
+    @media (min-width: 700px) {
+      height: 300px;
+      margin-bottom: 50px;
+    }
   }
   &__btn {
     font-family: $roboto;
@@ -23,10 +33,13 @@
     color: $mainColor;
     padding: 15px;
     border-radius: 50%;
-    position: relative;
-    left: 550px;
-    top: 20px;
+    font-size: 13px;
     cursor: pointer;
+    margin-top: -75px;
+    @media (min-width: 700px) {
+      margin-top: 40px;
+      font-size: 16px;
+    }
     &:hover {
       background-color: $mainColor;
       color: white;

@@ -3,7 +3,7 @@ import '../../styles/layout/FilterRating.scss'
 function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) {
 
   const handleClickRadio = (ev) => {
-    handleClickRadioLift2(ev.target.name)
+    handleClickRadioLift2(ev.target.id)
   }
 
   const htmlRadio = cleanRatingP1.map(eachRating => {
@@ -12,11 +12,11 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
       key={eachRating} >
       <input
         className='form__check'
-        type="checkbox"
-        name={eachRating}
-        id='rating'
+        type="radio"
+        name='rating'
+        id={eachRating}
         onChange={handleClickRadio}
-        checked={parseInt({ searchRatingP1 }) === { eachRating }}
+      // checked={parseInt({ searchRatingP1 }) === { eachRating }}
       />{eachRating}
     </label >
   })
@@ -27,10 +27,11 @@ function FilterRating({ cleanRatingP1, handleClickRadioLift2, searchRatingP1 }) 
         Selecciona una puntuación:
       </legend>
       <label htmlFor="rating" className="form__label">
-        <input type="checkbox" name="all"
+        <input type="radio"
           className='form__check'
-          id='rating'
-          checked={searchRatingP1 === 'all'}
+          id='all'
+          name='rating'
+          // checked={searchRatingP1 === 'all'}
           onChange={handleClickRadio}
         />Todos
       </label >

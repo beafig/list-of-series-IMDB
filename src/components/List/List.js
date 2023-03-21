@@ -40,8 +40,8 @@ function List({ cleanSeriesP }) {
   }
 
   //FUNCIÓN MANEJADORA DEL RADIO DE BUSCAR POR PUNTUACIÓN
-  const handleClickRadioLift = (name) => {
-    setSearchRating(name)
+  const handleClickRadioLift = (id) => {
+    setSearchRating(id)
   }
 
   // FILTRO LAS SERIES POR TÍTULO

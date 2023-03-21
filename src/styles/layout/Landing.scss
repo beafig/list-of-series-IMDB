@@ -1,21 +1,34 @@
 @import "../core/variables.scss";
 
 .landing {
-  min-height: 65vh;
+  min-height: 75vh;
   background: linear-gradient(#05275a, #6b71b9);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: $roboto;
+  @media (min-width: 700px) {
+    min-height: 65vh;
+  }
   &__text {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 30px;
+    @media (min-width: 700px) {
+      font-size: 30px;
+    }
   }
   &__container {
-    margin-top: 50px;
+    text-align: center;
+    margin-top: 40px;
     display: flex;
     gap: 25px;
+    flex-direction: column;
+    @media (min-width: 700px) {
+      margin-top: 50px;
+      flex-direction: row;
+      gap: 25px;
+    }
   }
   &__btn {
     font-family: $roboto;

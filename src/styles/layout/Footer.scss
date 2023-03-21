@@ -1,14 +1,17 @@
 @import "../core/variables.scss";
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: $mainColor;
   border-top: solid 2px $mainColor2;
-  width: 100%;
-  // position: sticky;
-  // bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 700px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__container {
     display: flex;
   }
@@ -16,13 +19,23 @@
     font-family: $roboto;
     color: white;
     margin-left: 15px;
+    font-size: 13px;
+    @media (min-width: 700px) {
+      font-size: 16px;
+    }
   }
   &__copy {
     color: white;
-    font-size: 14px;
+    font-size: 12px;
+    @media (min-width: 700px) {
+      font-size: 14px;
+    }
   }
   &__img {
-    height: 100px;
+    width: 60px;
+    @media (min-width: 700px) {
+      width: 100px;
+    }
   }
 }
 
@@ -30,9 +43,12 @@
 .fa-linkedin {
   color: white;
   margin-left: 15px;
-  font-size: 20px;
+  font-size: 14px;
   cursor: pointer;
   &:hover {
     transform: scale(150%);
+  }
+  @media (min-width: 700px) {
+    font-size: 20px;
   }
 }
